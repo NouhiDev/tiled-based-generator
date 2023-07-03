@@ -3,13 +3,49 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | tiled-based-generator</title>
+    <title>nouhidev | tiled-based generator</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
+    <header>
+      <div class="logo-nav">
+        <img src="assets/logo.png" alt="" />
+      </div>
+      <input type="checkbox" id="nav_check" hidden />
+      <nav>
+        <div class="logo">
+          <img src="assets/logo.png" alt="" />
+        </div>
+        <ul>
+          <li>
+            <a href="https://nouhi.dev/" class="active">Home</a>
+          </li>
+          <li>
+            <a href="https://nouhi.dev/games/">Games</a>
+          </li>
+          <li>
+            <a href="https://nouhi.dev/simulations/">Simulations</a>
+          </li>
+          <li>
+            <a href="https://nouhi.dev/projects/">Projects</a>
+          </li>
+          <li>
+            <a href="https://nouhi.dev/other-projects/">Other</a>
+          </li>
+          <li>
+            <a href="https://nouhi.dev/contact/">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <label for="nav_check" class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </label>
+    </header>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <canvas id="unity-canvas" width=1280 height=720></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -18,9 +54,8 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">tiled-based-generator</div>
+        <div id="unity-build-title">Tiled-based Generation</div>
       </div>
     </div>
     <script>
@@ -56,11 +91,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/011.loader.js";
+      var loaderUrl = buildUrl + "/v011.loader.js";
       var config = {
-        dataUrl: buildUrl + "/011.data.unityweb",
-        frameworkUrl: buildUrl + "/011.framework.js.unityweb",
-        codeUrl: buildUrl + "/011.wasm.unityweb",
+        dataUrl: buildUrl + "/v011.data.unityweb",
+        frameworkUrl: buildUrl + "/v011.framework.js.unityweb",
+        codeUrl: buildUrl + "/v011.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "NDev-Group",
         productName: "tiled-based-generator",
@@ -82,8 +117,8 @@
         config.devicePixelRatio = 1;
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "1280px";
+        canvas.style.height = "720px";
       }
       loadingBar.style.display = "block";
 
